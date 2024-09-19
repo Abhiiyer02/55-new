@@ -1,0 +1,43 @@
+<p>input-form works!</p>
+<h2>Enter your investment details</h2>
+<form [formGroup]="investmentForm" (ngSubmit)="onSubmit()">
+    <div >
+        @if(investmentForm.get('initialInvestment')?.invalid && investmentForm.get('initialInvestment')?.touched){
+            <p>investment cannot be empty</p>
+        }
+        @else{
+            <label class="input-group" for="initialInvestment" id="initialInvestment">
+                Enter initialInvestment:
+            </label>
+            <input class="input-group" type="number" id="initialInvestment" formControlName="initialInvestment"/>
+        }
+        @if(investmentForm.get('annualInvestment')?.invalid && investmentForm.get('annualInvestment')?.touched){
+            <p>annual investment cannot be empty</p>   
+        }
+        @else{
+            <label for="annualInvestment" id="annualInvestment">
+                Enter annualInvestment:
+            </label>
+            <input type="number" id="annualInvestment" formControlName="annualInvestment" />
+        }
+        @if(investmentForm.get('expectedReturn')?.invalid && investmentForm.get('expectedReturn')?.touched){
+            <p>expectedReturn investment cannot be empty</p>
+        }
+        @else{
+            <label for="expectedReturn" id="expectedReturn">
+                Enter expectedReturn:
+            </label>
+            <input type="number" id="expectedReturn" formControlName="expectedReturn" />
+        }
+        @if(investmentForm.get('duration')?.invalid && investmentForm.get('duration')?.touched){
+            <p>duration investment cannot be empty</p>
+        }@else{
+            <label for="duration" id="duration">
+                Enter duration:
+            </label>
+            <input type="number" id="duration" formControlName="duration" />    
+        }
+        <button type="reset">reset</button>
+        <button type="submit" disabled="investmentForm.invalid" >calculate</button>
+    </div>
+</form>

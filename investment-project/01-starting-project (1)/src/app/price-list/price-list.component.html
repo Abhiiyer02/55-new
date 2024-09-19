@@ -1,0 +1,49 @@
+
+
+@if( annualData.length > 0 ){
+<table>
+    <thead>
+        <tr>
+            <td>
+                Year
+            </td>
+            <td>
+                Investment Value
+            </td>
+            <td>
+                Interest (Year)
+            </td>
+            <td>
+                Total Interest
+            </td>
+            <td>
+                Invested Capital
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        @for(i of annualData; track i.year){
+            <tr>
+                <td>
+                    {{ i.year}}
+                </td>
+                <td>
+                    {{i.totalAmountInvested}}
+                </td>
+                <td>
+                    {{i.interest}}
+                </td>
+                <td>
+                    {{i.totalInterest}}
+                </td>
+                <td>
+                    {{i.valueEndOfYear}}
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+}
+@else{
+    <h2>enter some data</h2>
+}

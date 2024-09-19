@@ -1,0 +1,9 @@
+<div>
+  <a [routerLink]="['/users',user().id,'tasks']" routerLinkActive="selected"  >
+    <!-- routerLink="/users" is a directive but [routerLink] is  a prooperty binding that can accept dynamic routes  -->
+     <!-- [routerLink]="'/users' + user().id" is one way or [routerLink]="['/users',user().id]" -->
+    <!--   routerLinkActive is an angular directive that allows you to add css classes based on the current state of the route -->
+    <img [src]="imagePath()" [alt]="user().name" />
+    <span>{{ user().name }}</span>
+  </a>
+</div>

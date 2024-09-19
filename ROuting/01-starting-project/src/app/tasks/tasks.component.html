@@ -1,0 +1,14 @@
+<ul>
+
+  <a routerLink="../" [queryParams]="{order : order()==='desc'? 'asc':'desc'}">
+    Sort in {{order()==='asc'? 'Descending':'Ascending'}} order
+  </a>
+
+  @for (task of usertasks(); track task.id) {
+    <li>
+      <app-task [task]="task" />
+    </li>
+  } @empty {
+    <p>There are no tasks yet. Start adding some!</p>
+  }
+</ul>
